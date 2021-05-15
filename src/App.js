@@ -6,7 +6,7 @@ import Main from './components/Main';
 var notes=[
   {
     id: 1,
-    img: 'https://croatia.hr/sites/default/files/styles/image_full_width/public/2017-08/02_01_slide_nature.jpg?itok=ItAHmLlp',
+    img:'', //'https://croatia.hr/sites/default/files/styles/image_full_width/public/2017-08/02_01_slide_nature.jpg?itok=ItAHmLlp',
     title: 'random',
     description: 'kfdjggnkwjnkgnwjkrngkwnkg',
   }, 
