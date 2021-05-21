@@ -22,7 +22,7 @@ export default class Note extends React.Component{
 
     render() {
         return (
-        <Card key={this.props.note.id} className='rounded'>
+        <Card key={this.props.note.id}>
             <Card.Img variant='top' src={this.props.note.img} alt=' '/>
             <Card.Body>
                 <Card.Title>{this.props.note.title}</Card.Title>
