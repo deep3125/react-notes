@@ -31,7 +31,7 @@ const Header = ()=>{
             <Navbar>
                 <Button className='bg-white text-dark border-light shadow-sm' style={{fontSize: '25px'}} onClick={ToggleSlider} >&#9776;</Button>
                 <Form inline className='w-50 mx-auto'>
-                    <FormControl type='text' placeholder='search' className='w-100'></FormControl>
+                    <FormControl type='text' placeholder='Search' className='w-100 align-middle'></FormControl>
                     <Button type='submit' className='invisible'></Button>
                 </Form>
                 <Button className='btn-secondary rounded'>Logout</Button>

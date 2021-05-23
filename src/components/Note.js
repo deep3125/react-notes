@@ -1,6 +1,7 @@
 import React from 'react';
 import {Card} from 'react-bootstrap';
 import $ from 'jquery';
+import DeleteButton from './DeleteButton';
 
 
 export default class Note extends React.Component{
@@ -10,14 +11,15 @@ export default class Note extends React.Component{
         this.props=props;
     }
 
-    toggleClasses = () =>{
+    toggleClassesAndButtons = () =>{
         $('.card').on('mouseenter mouseleave', function(){
-            $(this).toggleClass('shadow');
+            $(this).toggleClass('shadow shadow-lg');
+            $(this).find('button').toggle();
         });
     }
 
     componentDidMount(){
-        this.toggleClasses();
+        this.toggleClassesAndButtons();
     }
 
     render() {
@@ -27,6 +29,8 @@ export default class Note extends React.Component{
             <Card.Body>
                 <Card.Title>{this.props.note.title}</Card.Title>
                 <Card.Text>{this.props.note.description}</Card.Text>
+                <DeleteButton/>
+                <br/>
             </Card.Body>
         </Card>
     );
