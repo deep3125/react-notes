@@ -18,7 +18,7 @@ const AddNotes = (props)=>{
 
   const on_Submition = (e) =>{
     e.preventDefault();
-    props.onAdd({
+    props.addNewNote({
       img: url,
       title: title,
       description: description,

@@ -2,43 +2,29 @@ import React from 'react';
 import {Card} from 'react-bootstrap';
 import $ from 'jquery';
 import DeleteButton from './DeleteButton';
-import {BsTrashFill} from 'react-icons/bs';
 
 
-export default class Note extends React.Component{
+const Note = (props) => {
 
-    constructor(props){
-        super();
-        this.props=props;
+    const toggleClassesAndButtons = (id) =>{
+        $('#' + id).toggleClass('shadow shadow-lg');
+        $('#' + id).find('button').toggle();
     }
 
-    toggleClassesAndButtons = () =>{
-        $('.card').on('mouseenter mouseleave', function(){
-            $(this).toggleClass('shadow shadow-lg');
-            $(this).find('button').toggle();
-        });
-    }
-
-    componentDidMount(){
-        this.toggleClassesAndButtons();
-    }
-
-    render() {
-        return (
-        <Card key={this.props.note.id}>
-            <Card.Img variant='top' src={this.props.note.img} alt=' '/>
+    return (
+        <Card key={props.note.id} id={props.note.id} onMouseEnter={() => toggleClassesAndButtons(props.note.id)} onMouseLeave={() => toggleClassesAndButtons(props.note.id)}>
+            <Card.Img variant='top' src={props.note.img} alt=' '/>
             <Card.Body>
-                <Card.Title>{this.props.note.title}</Card.Title>
-                <Card.Text>{this.props.note.description}</Card.Text>
-                <DeleteButton id={this.props.note.id} onDelete={this.props.onDelete}/>
-                {/* <button onClick={() => this.props.onDelete(this.props.id)} className='border border-secondary rounded-lg float-right bg-white' style={{display:'None', visibility:'invisible', transition:"0.5s", border: '5px'}}><BsTrashFill fontSize="20px"/></button> */}
+                <Card.Title>{props.note.title}</Card.Title>
+                <Card.Text>{props.note.description}</Card.Text>
+                <DeleteButton id={props.note.id} onDelete={props.onDelete}/>
                 <br/>
             </Card.Body>
         </Card>
     );
-    }
+    
 }
 
-    
+export default Note;   
 
 

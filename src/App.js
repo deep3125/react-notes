@@ -2,8 +2,11 @@ import './App.css';
 import Header from './components/Header';
 import Main from './components/Main';
 import { useState } from 'react';
+// import LogIn from './components/LogIn';
 
 const App = ()=> {
+
+  var LoggedIn = true;
 
   const [notes, setNotes]= useState([
     {
@@ -107,11 +110,23 @@ const App = ()=> {
     setNotes(notes.filter((note) => note.id!==id));
   }
 
+  const Decision = (props) => {
+    if (props.LoggedIn){
+      return (
+        <div className="App">
+          <Header></Header>
+          <Main notes={notes} addNewNote={addNewNote} onDelete={deleteNote}></Main>
+        </div>
+      );
+    }
+    // else{
+    //   return (<LogIn/>);
+    // }
+  }
+
+
   return (
-    <div className="App">
-      <Header></Header>
-      <Main notes={notes} addNewNote={addNewNote} onDelete={deleteNote}></Main>
-    </div>
+    <Decision LoggedIn={LoggedIn}/>
   );
 }
 

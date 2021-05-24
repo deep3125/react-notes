@@ -10,7 +10,7 @@ const Main = (props)=>{
                 <Slider></Slider>
             </div>
             <div style={{width:"100%"}}>
-                <AddNotes onAdd={props.addNewNote}></AddNotes>
+                <AddNotes addNewNote={props.addNewNote}></AddNotes>
             </div><br/><br/>
             <div>  
                 <div className='notes'>
