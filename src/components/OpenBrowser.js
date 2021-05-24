@@ -16,7 +16,7 @@ const OpenBrowser = ()=>{
     return (
         <div className="btn btn-secondary p-2 rounded-lg m-b-2" style={{width:"40%", position:"fixed", left:"30%",
         zIndex:"1", bottom:"0"}} onClick={windowWork}>
-            <div className="mx-auto text-light" style={{width:"fit-content"}}>OpenBrowser</div>
+            <div className="mx-auto text-light" style={{width:"fit-content"}}>Split Screen</div>
         </div>
     );
 }
