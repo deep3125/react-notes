@@ -2,6 +2,7 @@ import React from 'react';
 import {Card} from 'react-bootstrap';
 import $ from 'jquery';
 import DeleteButton from './DeleteButton';
+import {BsTrashFill} from 'react-icons/bs';
 
 
 export default class Note extends React.Component{
@@ -29,7 +30,8 @@ export default class Note extends React.Component{
             <Card.Body>
                 <Card.Title>{this.props.note.title}</Card.Title>
                 <Card.Text>{this.props.note.description}</Card.Text>
-                <DeleteButton/>
+                <DeleteButton id={this.props.note.id} onDelete={this.props.onDelete}/>
+                {/* <button onClick={() => this.props.onDelete(this.props.id)} className='border border-secondary rounded-lg float-right bg-white' style={{display:'None', visibility:'invisible', transition:"0.5s", border: '5px'}}><BsTrashFill fontSize="20px"/></button> */}
                 <br/>
             </Card.Body>
         </Card>

@@ -14,7 +14,7 @@ const Main = (props)=>{
             </div><br/><br/>
             <div>  
                 <div className='notes'>
-                    <Notes notes={props.notes}></Notes>    
+                    <Notes notes={props.notes} onDelete={props.onDelete}></Notes>    
                 </div>
                 <OpenBrowser></OpenBrowser>
             </div>

@@ -6,7 +6,7 @@ const Notes = (props)=> {
         <div className='card-columns'>
             {  
                 props.notes.map((note) => (
-                    <Note note={note} key={note.id}></Note>            
+                    <Note note={note} onDelete={props.onDelete} key={note.id}></Note>            
                 ))
             }
         </div>

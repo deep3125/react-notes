@@ -5,11 +5,6 @@ import { useState } from 'react';
 
 const App = ()=> {
 
-  const addNewNote = (note)=>{
-    const nt = {id: notes[notes.length-1].id + 1, ...note};
-    setNotes([...notes, nt])
-  }
-
   const [notes, setNotes]= useState([
     {
       id: 1,
@@ -103,10 +98,19 @@ const App = ()=> {
     },
   ]);
 
+  const addNewNote = (note)=>{
+    const nt = {id: notes[notes.length-1].id + 1, ...note};
+    setNotes([...notes, nt])
+  }
+
+  const deleteNote = (id)=>{
+    setNotes(notes.filter((note) => note.id!==id));
+  }
+
   return (
     <div className="App">
       <Header></Header>
-      <Main notes={notes} addNewNote={addNewNote}></Main>
+      <Main notes={notes} addNewNote={addNewNote} onDelete={deleteNote}></Main>
     </div>
   );
 }
