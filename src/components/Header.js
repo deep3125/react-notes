@@ -1,8 +1,11 @@
 import { Navbar, Form, FormControl, Button } from 'react-bootstrap';
 import $ from 'jquery';
+import { useState } from 'react'; 
 
 
-const Header = ()=>{
+const Header = (props)=>{
+
+    const [toBeSearched, settoBeSearched] = useState('');
 
     const ToggleSlider = ()=>{
         if ($('.Slider').width()>0){
@@ -26,12 +29,18 @@ const Header = ()=>{
         }
     }
 
+    const onSubmition = (e) => {
+        e.preventDefault();
+        props.searchAndMark(toBeSearched);
+        settoBeSearched('');
+    }
+
     return (
         <div>
             <Navbar>
                 <Button className='bg-white text-dark border-light shadow-sm' style={{fontSize: '25px'}} onClick={ToggleSlider} >&#9776;</Button>
-                <Form inline className='w-50 mx-auto'>
-                    <FormControl type='text' placeholder='Search' className='w-100 align-middle'></FormControl>
+                <Form inline className='w-50 mx-auto' href='#' onSubmit={onSubmition}>
+                    <FormControl type='text' placeholder='Search' className='w-100 align-middle' onChange={(e) => settoBeSearched(e.target.value)}></FormControl>
                     <Button type='submit' className='invisible'></Button>
                 </Form>
                 <Button className='btn-secondary rounded'>Logout</Button>
