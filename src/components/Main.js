@@ -14,8 +14,7 @@ const Main = (props)=>{
             </div><br/><br/>
             <div>  
                 <div className='notes'>
-                    <Notes notes={props.notes}></Notes>
-                    
+                    <Notes notes={props.notes}></Notes>    
                 </div>
                 <OpenBrowser></OpenBrowser>
             </div>
